@@ -335,7 +335,7 @@ input{font-family:var(--ff-body)}
 
 <div id="overlay">
   <div class="spinner"></div>
-  <div class="ov-title">Loading</div>
+  <div class="ov-title">Loading...</div>
   <div class="ov-sub" id="ov-sub">Connecting…</div>
 </div>
 <div id="toast"><span id="toast-ico"></span><span id="toast-msg">Done.</span></div>
@@ -614,7 +614,7 @@ function setUpdateChip(val){
 async function fetchAO(){
   const sap=document.getElementById('sap-input').value.trim();
   if(!sap){toast('Please enter a SAP code','err');return;}
-  setLoading(true,'Fetching AO data…');
+  setLoading(true,'Fetching AO data');
   try{
     const res=await fetch(`${API_URL}?action=getAO&sap=${encodeURIComponent(sap)}`);
     if(!res.ok) throw new Error(`HTTP ${res.status}`);
